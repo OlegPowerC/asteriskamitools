@@ -126,7 +126,7 @@ func getIPExtNameMap(ExSlDt []extData) map[string]ExtensionData {
 				if len(lf2) > 0 {
 					lf3 := strings.Split(lf2[0], ":")
 					if len(lf3) > 0 {
-						RetMap[ExdVal.Extension] = ExtensionData{Extension: ExdVal.Extension, Contacts: ExdVal.Contacts, IP: lf3[0], Name: ExdVal.Name}
+						RetMap[lf3[0]] = ExtensionData{Extension: ExdVal.Extension, Contacts: ExdVal.Contacts, IP: lf3[0], Name: ExdVal.Name}
 					}
 				}
 			}
