@@ -177,7 +177,6 @@ func GetPJSIPEndpointsIPtoDataMap(AMIAddr string, AMIPort int, AMIUsername strin
 
 	authrespm := respToMap(AuthRespT)
 
-	fmt.Println(authrespm["Message"])
 	exts := make([]extData, 0)
 	if authrespm["Message"] == AMI_AUTH_ACEPTED {
 		conn.Write([]byte(EndpointsStr))
@@ -194,8 +193,7 @@ func GetPJSIPEndpointsIPtoDataMap(AMIAddr string, AMIPort int, AMIUsername strin
 				exts = append(exts, extData{Extension: Ests, Contacts: ExtCnt, Name: ""})
 			} else {
 				if Exerr != nil {
-					fmt.Println(Exerr)
-					break
+					return nil, err
 				}
 			}
 		}
