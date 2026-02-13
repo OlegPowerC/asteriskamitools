@@ -1,3 +1,3 @@
-module gitlab.com/powerc-grp/asteriskamitools
+module github.com/OlegPowerC/asteriskamitools
 
 go 1.20
