@@ -76,3 +76,17 @@
         IP:        "10.0.0.50",
         Name:      "John Doe",
     }
+
+### Работа с chan_sip
+Для получения данных с Asterisk с chan_sip используйте GetSIPEndpointsIPtoDataMap  
+Она возвращает то же самое за исключением того что поле Contacts пустое
+
+### Тестирование
+Можно выполнить интеграционный тест:  
+
+    go test -v -args -pjsip <IP адрес Asterisk с PJSIP>\
+    -pjsipu <Имя пользователя AMI> \
+    -pjsipp <Пароль> \
+    -chansip <IP адрес Asterisk с chan_sip> \
+    -chansipu <Имя пользователя AMI> \
+    -chansipp <Пароль>
